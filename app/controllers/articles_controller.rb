@@ -12,10 +12,11 @@ class ArticlesController < ApplicationController
   end 
 
   def create 
-    @article = Article.new(title: "...", body: "...")
+    @article = Article.new(article_params)
 
     if @article.save 
       redirect_to @article 
+     
     else 
       render :new, status: :unprocessable_entity
     end 
@@ -35,7 +36,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def destroy 
+  def destroy
     @article = Article.find(params[:id])
     @article.destroy
 
@@ -49,3 +50,4 @@ class ArticlesController < ApplicationController
   end
 
 end
+
