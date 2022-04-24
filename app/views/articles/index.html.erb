@@ -2,7 +2,7 @@
 
 <ul> 
 <% @articles.each do |article| %>
-
+    <% unless article.archived? %>
 <li>
         <a href="/articles/ <%= article.id %>">
     
@@ -11,6 +11,8 @@
 </li>
 
 <% end %>
+<% end %>
+
 </ul>
 
 
