@@ -1,8 +1,5 @@
 <h1>Articles</h1>
 
-
-
-
     Our blog  
         <% if Article.public_count == 0 %> 
             <%= 'does not have any articles. Write one!' %>
@@ -15,6 +12,7 @@
 <ul> 
 <% @articles.each do |article| %>
     <% unless article.archived? %>
+  
 <li>
         <a href="/articles/ <%= article.id %>">
     
